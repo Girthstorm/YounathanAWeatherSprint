@@ -1,8 +1,31 @@
 body {
-    margin: 0;
-    padding: 0;
     background-image: url(../assets/BG.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+
+
+
+.mainBox {
+    background-color: black ;
+    opacity: 60%;
+    filter: drop-shadow(0 0 0.75rem black);
+    width: 1679px;
+    height: 961px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 54px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.innerWorkings {
+    position: absolute;
+    top: 46px;
+    right: 57px;
+    bottom: 47px;
+    left: 65px;
+    background-color: aliceblue;
+}
