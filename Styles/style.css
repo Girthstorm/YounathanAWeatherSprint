@@ -8,7 +8,7 @@ body {
 
 
 .mainBox {
-    background-color: black ;
+    background: linear-gradient(#000000 50%, #02203C , #0A1F32);
     opacity: 60%;
     filter: drop-shadow(0 0 0.75rem black);
     width: 1679px;
@@ -27,5 +27,32 @@ body {
     right: 57px;
     bottom: 47px;
     left: 65px;
-    background-color: aliceblue;
+    
+}
+
+.search-wrapper{
+    width: 719px;
+    height: 48px;
+    display: flex;
+}
+
+.searchbar {
+    width: 719px;
+    height: 48px;
+    background-color: FFFFFF;
+    
+}
+
+.searchbar input {
+    flex: 2;
+    border: none;
+    outline: none;
+    
+}
+
+.searchbar button {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
 }
