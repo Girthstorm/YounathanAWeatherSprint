@@ -1,6 +1,6 @@
 body {
-    background-image: url(../assets/BG.gif);
-    background-repeat: no-repeat;
+    background-image: url(../assets/fixedbg.gif);
+    background-repeat: repeat-y;
     background-size: cover;
 }
 
