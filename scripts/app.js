@@ -1,5 +1,15 @@
 import { apiKey } from "./apikey.js";
 
+let city = document.getElementById("city");
+let Temp = document.getElementById("Temp");
+
+
+
+
+
+
+
+
 //calling the daily weather
 async function dailyWeather() {
     console.log(apiKey);
