@@ -23,7 +23,7 @@
                 <div class="row top-bar">
                     <div class="search-wrapper">
                         <form class=" searchbar">
-                            <button><img src="./assets/magnifying-glass.svg" alt="Search Button"></button>
+                            <button type="button"><img src="./assets/magnifying-glass.svg" alt="Search Button"></button>
                             <input type="search" id="search" placeholder="Search for a city">
                         </form>
                         <div class="favBtnDiv">
@@ -33,14 +33,18 @@
                 </div>
                 <div class="row">
                     <div>
-                        <div class="card text-center mb-3" style="width: 786px; height: 506px;">
+                        <div class="card  border-0 text-center mb-3" style="width: 786px; height: 506px;">
                             <div class="card-body">
                                 <h5 class="card-title CW">Current Weather</h5>
                                 <p class="card-text city" id="city">Enter A City</p>
                                 <div class="tempCurrent">
-                                    <span class="Temp">--</span>
-                                    <span class="Far" id="Far">°F</span>
-                                    <span class="Cel" id="Cel">°C</span>
+                                    <div class="Temp"><p id="Temp">--</p></div>
+                                      <div class="Far move-down" id="Far">°F</div>
+                                      <div class="vertical-line-container move-down">|</div>
+                                      <div class="Cel" id="Cel">°C</div>
+                                </div>
+                                <div class="weatherCond" id="weatherCond">
+                                  <p>Weather Condition</p>
                                 </div>
                             </div>
                         </div>

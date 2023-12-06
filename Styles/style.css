@@ -12,7 +12,7 @@ body {
 
 
 .mainBox {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(2, 32, 60, 0.6), rgba(10, 31, 50, 0.6));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(2, 32, 60, 0.5), rgba(10, 31, 50, 0.5));
     
     filter: drop-shadow(0 0 0.75rem black);
     width: 1679px;
@@ -84,19 +84,38 @@ body {
     align-items: center;
 }
 
-.card-body {
-    background: linear-gradient(#001446, #384462 );
-    border: none;
+.card{
+    border-radius: 25px;
 }
 
+.card-body {
+    background: linear-gradient(#001446, #384462 );
+    border-radius: 25px;
+}
+
+.vertical-line-container {
+
+    height: 57px;
+    font-size: 57px;
+    font-weight: 100;
+  }
 
 .CW {
+    margin-top: 20px;
     font-size: 64px;
     font-weight: 700;
     color: white;
 }
 
+.tempCurrent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
 .city{
+    margin-top: 10px;
     font-size: 40px;
 }
 
@@ -104,6 +123,23 @@ body {
     font-size: 150px;
 }
 
-.far {
+.Far {
     font-size: 68px;
+    margin-right: 23px;
+    
+}
+
+.move-down {
+    padding-top: 20px;
+}
+
+.Cel {
+    margin-left: 20px;
+    font-size: 50px;
+    padding-top: 30px;
+    color: #98A0B1;
+}
+
+.weatherCond {
+    font-size: 48px;
 }
