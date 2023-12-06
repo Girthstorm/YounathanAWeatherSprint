@@ -83,6 +83,7 @@ async function loadWeather() {
     console.log(fullState);
     const TOABR = stateNameToAbbreviation(fullState)
     city.innerText = `${data4[0].name}, ${TOABR}`;
+    weatherCond.innerText = (data3.weather[0].main)
     
 }
 
