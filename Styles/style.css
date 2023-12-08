@@ -150,7 +150,11 @@ body {
 }
 
 .spacing {
-    
+    margin-top: 70px;
+}
+
+.spacingv2 {
+    margin-top: 65px;
 }
 
 .line-up {
@@ -163,4 +167,22 @@ body {
 
 .font {
     font-size: 32px;
+}
+
+.center-div {
+    height: 785px;
+    border-right: 5px solid #ACB4BB;
+    
+}
+
+.sizeAccord {
+    width: 663px;
+    height: 785px;
+    overflow: scroll;
+    background: linear-gradient(#001446, #384462 );
+}
+
+.sizeAccordBtn {
+    height: 130px;
+    
 }
