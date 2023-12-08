@@ -7,10 +7,33 @@ let Cel = document.getElementById("Cel")
 let weatherCond = document.getElementById("weatherCond")
 let lon;
 let lat;
-let unit = "imperial"
+let unit = "imperial";
 let fullState;
+let search = document.getElementById("search");
+let maxTemp = document.getElementById("maxTemp");
+let minTemp = document.getElementById("minTemp");
+let windSpeed = document.getElementById("windSpeed");
+let humidity = document.getElementById("humidity");
+let ForC = "°F";
+let windUnits = document.getElementById("windUnits");
+let mphms = "MPH";
+let favStr = document.getElementById("favStr");
+let favors = [];
 
 
+function unitcheck() {
+    if (unit === "imperial") {
+        ForC = "°F"
+    } else {
+        ForC = "°C"
+    }
+
+    if (unit === "imperial") {
+        mphms = "MPH"
+    } else {
+        mphms = "M/S"
+    }
+}
 
 function stateNameToAbbreviation(fullStateName) {
 
@@ -84,7 +107,12 @@ async function loadWeather() {
     const TOABR = stateNameToAbbreviation(fullState)
     city.innerText = `${data4[0].name}, ${TOABR}`;
     weatherCond.innerText = (data3.weather[0].main)
-    
+    unitcheck()
+    windUnits.innerText = mphms;
+    maxTemp.innerText = `${Math.trunc(data3.main.temp_max)}${ForC}`
+    minTemp.innerText = `${Math.trunc(data3.main.temp_min)}${ForC}`
+    windSpeed.innerText = Math.trunc(data3.wind.speed)
+    humidity.innerText = data3.main.humidity
 }
 
 //Farenheit or however you spell that
@@ -104,6 +132,22 @@ Cel.addEventListener('click', function(event){
     }
 })
 
+console.log(favors)
+
+favStr.addEventListener('click', function(event){
+    
+    
+    if (favors.includes(city.innerText)){
+        favStr.src = "./assets/star.svg"
+        let nameIndex = favors.indexOf(city.innerText);
+        favors.splice(nameIndex , 1)
+        console.log(favors);
+    } else {
+        favors.push(city.innerText);
+        favStr.src = "./assets/star-fill.svg"
+        console.log(favors);
+    }
+})
 
 
 //calling the daily weather

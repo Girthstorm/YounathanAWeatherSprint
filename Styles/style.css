@@ -17,9 +17,6 @@ body {
     filter: drop-shadow(0 0 0.75rem black);
     width: 1679px;
     height: 961px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
     margin-top: 54px;
     border-radius: 20px;
     position: relative;
@@ -31,7 +28,7 @@ body {
     right: 57px;
     bottom: 47px;
     left: 65px;
-    opacity: 100% !important;
+    
 }
 
 .top-bar {
@@ -39,35 +36,43 @@ body {
 }
 
 .search-wrapper {
-
+    margin-left: 13px;
     display: flex;
     position: relative;
+    background-color: rgba(253, 253, 253, 0.2);
+    border-radius: 25px;
+}
+
+.search {
+    background-color: transparent;
 }
 
 .searchbar {
-    background-color: FFFFFF;
-
+    display: flex;
 }
 
 .searchbar input {
-
-    flex: 2;
+    
+    
     border: none;
     outline: none;
     width: 719px;
     height: 48px;
-    opacity: 22%;
-    border-radius: 25px;
+    
+    
+    
+}
+
+.search::placeholder {
+    color: white;
 }
 
 .searchbar button {
-    position: absolute;
-    flex: 1;
     border: none;
     outline: none;
     background: none;
     z-index: 1;
-    padding-top: 8px;
+    
     padding-left: 24px;
 }
 
@@ -98,7 +103,7 @@ body {
     height: 57px;
     font-size: 57px;
     font-weight: 100;
-  }
+}
 
 .CW {
     margin-top: 20px;
@@ -142,4 +147,20 @@ body {
 
 .weatherCond {
     font-size: 48px;
+}
+
+.spacing {
+    
+}
+
+.line-up {
+    display: flex;
+}
+
+.spr{
+    margin-left: 15px;
+}
+
+.font {
+    font-size: 32px;
 }
