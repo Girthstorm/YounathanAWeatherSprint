@@ -24,7 +24,7 @@ let currentState;
 let searchBtn = document.getElementById("searchBtn");
 let dates = [];
 let newSearch;
-
+let weathericon = document.getElementById("weathericon");
 
 function unitcheck() {
     if (unit === "imperial") {
@@ -94,6 +94,8 @@ function stateNameToAbbreviation(fullStateName) {
         case 'West Virginia': return 'WV';
         case 'Wisconsin': return 'WI';
         case 'Wyoming': return 'WY';
+        case 'Virgin Islands': return 'VI';
+        case 'Puerto Rico': return 'PR';
         default: return null;
     }
 }
@@ -129,6 +131,7 @@ async function loadWeather() {
     if(localStorage.getItem('City') != undefined){
         favors = JSON.parse(localStorage.getItem('City'));
     }
+    updateWeatherImage()
 }
 
 function checkIfFavorites(){
@@ -233,6 +236,7 @@ async function Search() {
     humidity.innerText = data.main.humidity;
     fiveDayFetch()
     checkIfFavorites()
+    updateWeatherImage()
 }
 
 searchBtn.addEventListener('click', function(event){
@@ -257,4 +261,32 @@ async function fiveDay() {
 }
 fiveDay()
 
-function
+function updateWeatherImage() {
+
+    switch (weatherCond.innerText) {
+        case 'Clouds':
+            weathericon.src = ".assets/cloud-sun-fill.svg"; // Replace 'clouds.jpg' with the actual image source for clouds
+            break;
+        case 'Clear':
+            weathericon.src = "assets/sun-fill.svg"
+            break;
+        case 'Snow':
+            iweathericon.src = ""
+            break;
+        case 'Drizzle':
+            weathericon.src = ""
+            break;
+        case 'Rain':
+            weathericon.src = ""
+            break;
+        case 'Thunderstorm':
+            weathericon.src = ""
+            break;
+        case 'Atmosphere':
+            weathericon.src = ""
+            break;
+        default:
+            weathericon.src = ""
+            break;
+    }
+}
