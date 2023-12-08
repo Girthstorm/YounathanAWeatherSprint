@@ -31,8 +31,14 @@ body {
     
 }
 
+.font40 {
+    font-size: 40px;
+    color: white !important;
+}
+
 .top-bar {
     margin-bottom: 22px;
+    width: 720px;
 }
 
 .search-wrapper {
@@ -41,6 +47,7 @@ body {
     position: relative;
     background-color: rgba(253, 253, 253, 0.2);
     border-radius: 25px;
+    width: 720px;
 }
 
 .search {
@@ -56,7 +63,7 @@ body {
     
     border: none;
     outline: none;
-    width: 719px;
+    width: 700px;
     height: 48px;
     
     
@@ -84,7 +91,7 @@ body {
 }
 
 .favBtnDiv {
-    margin-left: 28px;
+    
     display: flex;
     align-items: center;
 }
@@ -182,7 +189,62 @@ body {
     background: linear-gradient(#001446, #384462 );
 }
 
+
 .sizeAccordBtn {
     height: 130px;
-    
+    background: none;
+    background-color: rgba(2, 2, 2, 0);
 }
+
+.accordion-header {
+    font-size: 64px;
+    font-weight: 600;
+}
+
+.calMove {
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.accordion-item {
+    background-color: transparent;
+}
+
+.white {
+    color: white;
+}
+
+
+.accordion{
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba(0, 163, 255, 1)'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba(0, 163, 255, 1)'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+
+.accordion-button::after {
+    width: 63px;
+    height: 63px;
+    background-size: 63px;
+}
+
+.accordion-item:not(:first-of-type) {
+    border-width: 1px 0 1px 0
+}
+
+.accordion-button:not(.collapsed) { 
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.br {
+    border-radius: 25px;
+}
+
+.my {
+    margin-right: 80px
+}
+
+.margin-lefitcus {
+    margin-left: 40px;
+}
+
+
