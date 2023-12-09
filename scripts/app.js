@@ -25,6 +25,7 @@ let searchBtn = document.getElementById("searchBtn");
 let dates = [];
 let newSearch;
 let weathericon = document.getElementById("weathericon");
+let weatherydoo;
 
 function unitcheck() {
     if (unit === "imperial") {
@@ -105,7 +106,7 @@ async function loadWeather() {
     const promise3 = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`)
     const data3 = await promise3.json();
     console.log(data3);
-
+    
     Temp.innerText = Math.trunc(data3.main.temp);
     const promise4 = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`)
     const data4 = await promise4.json();
@@ -117,6 +118,7 @@ async function loadWeather() {
     currentCity = data4[0].name;
     currentState = data4[0].state;
     weatherCond.innerText = (data3.weather[0].main)
+    weatherydoo = data3.weather[0].main
     unitcheck()
     windUnits.innerText = mphms;
     maxTemp.innerText = `${Math.trunc(data3.main.temp_max)}${ForC}`
@@ -131,7 +133,7 @@ async function loadWeather() {
     if(localStorage.getItem('City') != undefined){
         favors = JSON.parse(localStorage.getItem('City'));
     }
-    updateWeatherImage()
+    updateWeatherImage(weatherydoo)
 }
 
 function checkIfFavorites(){
@@ -234,9 +236,10 @@ async function Search() {
     minTemp.innerText = `${Math.trunc(data.main.temp_min)}${ForC}`
     windSpeed.innerText = Math.trunc(data.wind.speed)
     humidity.innerText = data.main.humidity;
+    weatherydoo = data.weather[0].main;
     fiveDayFetch()
     checkIfFavorites()
-    updateWeatherImage()
+    updateWeatherImage(weatherydoo);
 }
 
 searchBtn.addEventListener('click', function(event){
@@ -261,29 +264,33 @@ async function fiveDay() {
 }
 fiveDay()
 
-function updateWeatherImage() {
+function updateWeatherImage(weatherydoo) {
 
-    switch (weatherCond.innerText) {
+    switch (weatherydoo) {
         case 'Clouds':
-            weathericon.src = ".assets/cloud-sun-fill.svg"; // Replace 'clouds.jpg' with the actual image source for clouds
+            weathericon.src = "./assets/cloud-sun-fill.svg";
+            console.log("1" + weatherydoo + weathericon.src)
             break;
         case 'Clear':
-            weathericon.src = "assets/sun-fill.svg"
+            weathericon.src = "./assets/sun-fill.svg"
+            console.log("2" + weatherydoo + weathericon.src)
             break;
         case 'Snow':
-            iweathericon.src = ""
+            weathericon.src = "./assets/snowflake-bold.svg"
+            console.log("3")
             break;
         case 'Drizzle':
-            weathericon.src = ""
+            weathericon.src = "./assets/cloud-rain-fill.svg"
+            console.log("4")
             break;
         case 'Rain':
-            weathericon.src = ""
+            weathericon.src = "./assets/cloud-rain-fill.svg"
             break;
         case 'Thunderstorm':
-            weathericon.src = ""
+            weathericon.src = "./assets/cloud-lightning-fill.svg"
             break;
         case 'Atmosphere':
-            weathericon.src = ""
+            weathericon.src = "./assets/cloud-fog-fill.svg"
             break;
         default:
             weathericon.src = ""
